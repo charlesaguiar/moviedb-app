@@ -27,5 +27,6 @@ module.exports = {
   },
   rules: {
     'func-names': 'off',
+    'linebreak-style': 'off',
   },
 };
