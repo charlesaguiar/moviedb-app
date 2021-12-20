@@ -1,25 +1,26 @@
 import React from 'react';
 
-import useFetch from 'hooks/useFetch';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
-import MoviesService from 'services/MoviesService';
-
-import Icon from 'components/atoms/Icon';
+import AppHeader from 'components/AppHeader';
+import HomePage from 'pages/Home';
+import MovieDetailsPage from 'pages/MovieDetails';
 
 const App = function () {
-  const [{ data, loading }] = useFetch(() => MoviesService.getMovies());
-
-  if (loading) {
-    return <p>Carregando...</p>;
-  }
-
-  console.log({ data });
-
   return (
-    <div>
-      <p>Teste</p>
-      <Icon />
-    </div>
+    <>
+      <AppHeader />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="movie/:movieId" element={<MovieDetailsPage />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 

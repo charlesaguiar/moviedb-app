@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from 'design/colors';
 
 const GlobalStyle = createGlobalStyle`
     *, *::before, *::after {
@@ -11,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #f8f8f8;
+        background-color: ${colors.background};
     }
 
     input, label {

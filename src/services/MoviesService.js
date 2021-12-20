@@ -1,6 +1,9 @@
 import MoviesRepository from 'repositories/MoviesRepository';
 
-const getMovies = (parameters) => MoviesRepository.getMovies(parameters);
+const getMovies = async (parameters) => {
+  const results = await MoviesRepository.getMovies(parameters);
+  return results.data;
+};
 
 const getMovie = (id) => MoviesRepository.getMovie(id);
 
