@@ -1,9 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-// import { Container } from './styles';
+import MovieDetailsTemplate from 'templates/MovieDetails';
 
 const MovieDetails = function () {
-  return <p>MovieDetails</p>;
+  const { movieId } = useParams();
+
+  return <MovieDetailsTemplate movieId={movieId} />;
 };
 
 export default MovieDetails;

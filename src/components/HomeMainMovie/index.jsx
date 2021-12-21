@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMoviesContext } from 'contexts/MoviesContext';
 
 import { MOVIE_DB_IMAGE_URL } from 'utils/constants';
 
@@ -15,14 +16,16 @@ import {
   Title,
 } from './styles';
 
-const HomeMainMovie = function ({ mainMovie }) {
+const HomeMainMovie = function () {
+  const [moviesContext] = useMoviesContext();
+
   const {
     poster_path: posterImage,
     vote_average: rate,
     release_date: releaseDate,
     title,
     overview,
-  } = mainMovie;
+  } = moviesContext.mainMovie;
 
   const posterImagePath = `${MOVIE_DB_IMAGE_URL.large}${posterImage}`;
 

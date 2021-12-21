@@ -7,6 +7,10 @@ import {
   faFrown,
   faSmile,
   faSearch,
+  faPlus,
+  faBookmark,
+  faMoneyBillWave,
+  faClock,
 } from '@fortawesome/free-solid-svg-icons';
 
 const configFontAwesome = () => {
@@ -17,6 +21,10 @@ const configFontAwesome = () => {
   library.add(faFrown);
   library.add(faSmile);
   library.add(faSearch);
+  library.add(faPlus);
+  library.add(faBookmark);
+  library.add(faMoneyBillWave);
+  library.add(faClock);
 };
 
 export default configFontAwesome;

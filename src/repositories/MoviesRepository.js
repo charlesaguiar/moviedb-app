@@ -5,6 +5,10 @@ const getMovies = (parameters) => {
   return api.get(`/movie/${filter}`, { params: { page: parameters?.page || 1 } });
 };
 
+const searchMovies = (parameters) => api.get('/search/movie', {
+  params: { query: parameters.query, page: parameters.page },
+});
+
 const getMovie = (id) => api.get(`/movie/${id}`);
 
 const getMovieActors = (movieId) => api.get(`/movie/${movieId}/credits`);
@@ -16,9 +20,13 @@ const getMovieRecommendations = (movieId) => api.get(`/movie/${movieId}/recommen
   },
 });
 
+const getGenres = () => api.get('/genre/movie/list');
+
 export default {
   getMovies,
+  searchMovies,
   getMovie,
   getMovieActors,
   getMovieRecommendations,
+  getGenres,
 };

@@ -5,4 +5,11 @@ export const MOVIE_DB_IMAGE_URL = {
   original: 'https://image.tmdb.org/t/p/original',
 };
 
+export const MOVIES_CONTEXT_INITIAL_VALUE = {
+  searchTerm: '',
+  movies: [],
+  mainMovie: null,
+  pagination: { totalResults: 0, totalPages: 1, page: 1 },
+};
+
 export default null;
