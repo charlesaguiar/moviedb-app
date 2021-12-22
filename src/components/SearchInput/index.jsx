@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMoviesContext } from 'contexts/MoviesContext';
 
 import Icon from 'components/Icon';
@@ -6,17 +6,26 @@ import Icon from 'components/Icon';
 import { Container, Input, SearchIconContainer } from './styles';
 
 const SearchInput = function () {
+  const [query, setQuery] = useState('');
   const [moviesContext, setMoviesContext] = useMoviesContext();
+
+  useEffect(() => {
+    setQuery(moviesContext.searchTerm);
+  }, [moviesContext.searchTerm]);
+
+  const handleSearch = () => {
+    setMoviesContext({ searchTerm: query });
+  };
 
   return (
     <Container>
       <Input
         type="text"
         placeholder="Search movies..."
-        value={moviesContext.searchTerm}
-        onChange={(e) => setMoviesContext({ searchTerm: e.target.value })}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
-      <SearchIconContainer>
+      <SearchIconContainer onClick={handleSearch}>
         <Icon icon="search" color="gray" />
       </SearchIconContainer>
     </Container>

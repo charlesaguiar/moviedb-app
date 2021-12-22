@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useMoviesContext } from 'contexts/MoviesContext';
 
 import { MOVIE_DB_IMAGE_URL } from 'utils/constants';
@@ -25,15 +26,18 @@ const HomeMainMovie = function () {
     release_date: releaseDate,
     title,
     overview,
+    id,
   } = moviesContext.mainMovie;
 
   const posterImagePath = `${MOVIE_DB_IMAGE_URL.large}${posterImage}`;
 
   return (
     <Container>
-      <PosterContainer>
-        <Poster src={posterImagePath} />
-      </PosterContainer>
+      <Link to={`/movie/${id}`}>
+        <PosterContainer>
+          <Poster src={posterImagePath} />
+        </PosterContainer>
+      </Link>
       <HighlightedContainer>
         <HighlightedTitle>Highlight</HighlightedTitle>
         <Title>{title}</Title>

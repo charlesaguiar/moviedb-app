@@ -14,6 +14,8 @@ export const MovieInformation = styled.div`
   flex-direction: column;
   gap: 4px;
   margin-top: 4px;
+  flex-wrap: wrap;
+  max-width: fit-content;
 `;
 
 export const MovieTitle = styled.span`

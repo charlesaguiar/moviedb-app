@@ -6,6 +6,7 @@ import { formatToHHmm, formatToUsCurrency } from 'utils/format';
 
 import Icon from 'components/Icon';
 import MovieRating from 'components/MovieRating';
+import MoviePosterPlaceholder from 'components/MoviePosterPlaceholder';
 
 import {
   Container,
@@ -41,7 +42,9 @@ const MovieHeader = function ({ movie }) {
   return (
     <Container>
       <PosterContainer>
-        <Poster src={posterImagePath} />
+        {posterImage ? (<Poster src={posterImagePath} />) : (
+          <MoviePosterPlaceholder size={{ width: '300px', height: '450px' }} />
+        )}
       </PosterContainer>
       <div>
         <InfoContainer>

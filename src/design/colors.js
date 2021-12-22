@@ -8,4 +8,5 @@ export default {
   red: '#FB1455',
   gray: '#B7B7B7',
   sky: '#DFE3E8',
+  black: '#000',
 };

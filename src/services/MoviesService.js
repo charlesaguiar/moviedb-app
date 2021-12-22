@@ -26,7 +26,15 @@ const getMovieActors = async (movieId, limit = null) => {
   return cast;
 };
 
-const getMovieRecommendations = (movieId) => MoviesRepository.getMovieRecommendations(movieId);
+const getMovieRecommendations = async (movieId, limit) => {
+  const { data: { results } } = await MoviesRepository.getMovieRecommendations(movieId);
+
+  if (limit) {
+    return [...results].slice(0, limit);
+  }
+
+  return results;
+};
 
 const getGenres = async () => {
   const results = await MoviesRepository.getGenres();

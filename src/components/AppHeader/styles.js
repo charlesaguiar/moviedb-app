@@ -18,6 +18,10 @@ export const Image = styled.img`
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  & > a {
+    text-decoration: none;
+  }
 `;
 
 export const HeaderTitle = styled.span`

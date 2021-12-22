@@ -6,6 +6,7 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   align-self: center;
+  padding: 0 20px;
 `;
 
 export const Input = styled.input`

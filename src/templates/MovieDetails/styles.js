@@ -7,4 +7,11 @@ export const Container = styled.div`
   margin: 32px;
 `;
 
+export const NavContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+`;
+
 export default null;

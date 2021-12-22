@@ -11,6 +11,8 @@ import {
   faBookmark,
   faMoneyBillWave,
   faClock,
+  faSadCry,
+  faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 const configFontAwesome = () => {
@@ -25,6 +27,8 @@ const configFontAwesome = () => {
   library.add(faBookmark);
   library.add(faMoneyBillWave);
   library.add(faClock);
+  library.add(faSadCry);
+  library.add(faChevronRight);
 };
 
 export default configFontAwesome;

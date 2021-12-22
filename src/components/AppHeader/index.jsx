@@ -18,13 +18,15 @@ const AppHeader = function () {
     <Container>
       <Image src={CinemaPopcorn} alt="logo" />
       <HeaderContainer>
-        <HeaderTitle>
-          React Movie
-          <HeaderColoredTitle>D</HeaderColoredTitle>
-          ata
-          <HeaderColoredTitle>B</HeaderColoredTitle>
-          ase
-        </HeaderTitle>
+        <a href="/" de>
+          <HeaderTitle>
+            React Movie
+            <HeaderColoredTitle>D</HeaderColoredTitle>
+            ata
+            <HeaderColoredTitle>B</HeaderColoredTitle>
+            ase
+          </HeaderTitle>
+        </a>
         <HeaderSubTitle>
           <Icon icon="bolt" color="primaryActive" />
           <span style={{ marginLeft: 8 }}>Powered by</span>

@@ -8,7 +8,9 @@ import { useMoviesContext } from 'contexts/MoviesContext';
 import HomeMainMovie from 'components/HomeMainMovie';
 import PopularMovies from 'components/PopularMovies';
 import SearchInput from 'components/SearchInput';
+import Loading from 'components/Loading';
 
+import { FullLoadingContainer } from 'design/shared.styles';
 import { Container, Divider } from './styles';
 
 const HomeTemplate = function () {
@@ -36,15 +38,19 @@ const HomeTemplate = function () {
     });
   }, [data]);
 
-  if (loading || !moviesContext.movies) {
-    return <p>Loading...</p>;
+  if (loading || !data) {
+    return (
+      <FullLoadingContainer>
+        <Loading size={200} />
+      </FullLoadingContainer>
+    );
   }
 
   if (!moviesContext.movies.length) {
     return <p>Couldnt find any movies to display.</p>;
   }
 
-  console.log({ moviesContext });
+  console.log({ m: moviesContext.movies });
 
   return (
     <Container>

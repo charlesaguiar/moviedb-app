@@ -4,7 +4,10 @@ import useFetch from 'hooks/useFetch';
 import MoviesService from 'services/MoviesService';
 
 import { MOVIE_DB_IMAGE_URL } from 'utils/constants';
+import Loading from 'components/Loading';
+import MoviePosterPlaceholder from 'components/MoviePosterPlaceholder';
 
+import { FullLoadingContainer } from 'design/shared.styles';
 import {
   Container,
   Gallery,
@@ -21,7 +24,11 @@ const MovieActors = function ({ movieId }) {
   );
 
   if (loading || !actors) {
-    return <p>Loading...</p>;
+    return (
+      <FullLoadingContainer>
+        <Loading size={200} />
+      </FullLoadingContainer>
+    );
   }
 
   return (
@@ -41,7 +48,9 @@ const MovieActors = function ({ movieId }) {
 const ActorItem = function ({ actor }) {
   return (
     <>
-      <CastProfilePicture src={`${MOVIE_DB_IMAGE_URL.medium}${actor.profile_path}`} />
+      {actor.profile_path ? (
+        <CastProfilePicture src={`${MOVIE_DB_IMAGE_URL.medium}${actor.profile_path}`} />
+      ) : (<MoviePosterPlaceholder roundedBorder={false} />)}
       <CastInfoContainer>
         <span>{actor.original_name}</span>
         <span className="italic">{actor.character}</span>

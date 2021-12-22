@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { MOVIE_DB_IMAGE_URL } from 'utils/constants';
 
 import MovieRating from 'components/MovieRating';
+import MoviePosterPlaceholder from 'components/MoviePosterPlaceholder';
 
 import {
   Container,
@@ -14,7 +15,7 @@ import {
   MovieReleaseDate,
 } from './styles';
 
-const Movie = function ({ movie }) {
+const Movie = function ({ movie, size = 'medium' }) {
   const {
     id,
     poster_path: posterImage,
@@ -23,12 +24,16 @@ const Movie = function ({ movie }) {
     title,
   } = movie;
 
-  const posterImagePath = `${MOVIE_DB_IMAGE_URL.medium}${posterImage}`;
+  const posterImagePath = `${MOVIE_DB_IMAGE_URL[size]}${posterImage}`;
 
   return (
     <Container>
       <Link to={`/movie/${id}`}>
-        <MovieMainPicture src={posterImagePath} />
+        {posterImage ? (
+          <MovieMainPicture src={posterImagePath} />
+        ) : (
+          <MoviePosterPlaceholder size={{ width: '300px', height: '450px' }} />
+        )}
       </Link>
       <MovieInformation>
         <MovieTitle>{title}</MovieTitle>

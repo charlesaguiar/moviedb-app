@@ -27,6 +27,11 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   body {
     margin: 0;
     padding: 0;
