@@ -1,39 +1,17 @@
 import React from 'react';
 
-import CinemaPopcorn from 'assets/images/cinema-popcorn.png';
-
-import Icon from 'components/Icon';
+import AppName from './AppName';
+import AppNavItems from './AppNavItems';
 
 import {
   Container,
-  Image,
-  HeaderContainer,
-  HeaderTitle,
-  HeaderColoredTitle,
-  HeaderSubTitle,
 } from './styles';
 
 const AppHeader = function () {
   return (
     <Container>
-      <Image src={CinemaPopcorn} alt="logo" />
-      <HeaderContainer>
-        <a href="/" de>
-          <HeaderTitle>
-            React Movie
-            <HeaderColoredTitle>D</HeaderColoredTitle>
-            ata
-            <HeaderColoredTitle>B</HeaderColoredTitle>
-            ase
-          </HeaderTitle>
-        </a>
-        <HeaderSubTitle>
-          <Icon icon="bolt" color="primaryActive" />
-          <span style={{ marginLeft: 8 }}>Powered by</span>
-          {' '}
-          <a target="_blank" rel="noopener noreferrer" href="https://www.themoviedb.org/">themoviedb.org</a>
-        </HeaderSubTitle>
-      </HeaderContainer>
+      <AppName />
+      <AppNavItems />
     </Container>
   );
 };

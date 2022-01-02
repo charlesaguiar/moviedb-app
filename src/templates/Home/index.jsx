@@ -50,8 +50,6 @@ const HomeTemplate = function () {
     return <p>Couldnt find any movies to display.</p>;
   }
 
-  console.log({ m: moviesContext.movies });
-
   return (
     <Container>
       <HomeMainMovie />
